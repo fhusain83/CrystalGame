@@ -1,0 +1,77 @@
+
+
+#winsnum,#lossesnum
+{
+font-family: "Alex Brush";
+font-size:40px;
+text-align: left;
+text-indent: 10px;
+ 
+}
+
+#wins
+{
+font-family: "Alex Brush";
+font-size:40px;
+text-align: left;
+text-indent: 10px;
+ 
+}
+
+#Losses{
+	font-family: "Alex Brush";
+	font-size: 40px;
+	text-align: left;
+	text-indent: 40px;
+}
+
+h1 {
+	font-family: "Alex Brush";
+	font-size: 50px;
+	text-align: left;
+	text-indent: 30 px;
+}
+
+
+
+
+h2 {
+	font-family: 	"Alex Brush";
+	font-size: 100px;
+    text-align: center;
+    font-weight: bold;
+    color:White;
+	margin:10;
+	padding:10;
+}
+
+
+.backgroundimg
+{
+	background-image:url('C:/Project-SMU/CrystalGame/Assets/images/jewelry.jpg');
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: blue;
+    height: 50vh;
+
+    opacity: 0.5
+    width:100%;
+}
+#diamond_butt
+{
+
+width: 200px;
+height: 200px;
+margin-top: 50px;
+
+}
+
+#diamond
+{
+
+width: 200px;
+height: 190px;
+
+
+}

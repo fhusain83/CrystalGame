@@ -1,0 +1,143 @@
+<!Doctype HTML>
+<lang "en-US">
+
+<head>
+	<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+<link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<Body>
+
+
+<div class="container">
+
+<div class="col-lg-12">
+<div class="row backgroundimg"><h2>Crystals</h2></div>
+</div>
+</div>
+
+<div class="container">
+
+          <div class="row">
+          <div class="col-6"><h1>Pick A Crystal</h1></div>
+          </div>
+
+          <div class="row">
+           <div class="col-lg-4" id="wins" data-name="RandomNumber">Random Number:<span id="num"></span>
+           </div>
+          <div class="col-lg-3" id="wins" >Total Score:<span id="score"</span></div>
+          <div class="col-lg-2" id="wins">Wins:<span id="winsnum"</span></div>
+           <div class="col-lg-2" id="Losses">Losses:<span id="lossesnum"</span></div>
+
+           </div>
+           
+           <div class="row">
+     
+          <div class="col-lg-4"><button id="diamond_butt" data-name="diamond"><img id="diamond" class="img-responsive"  src ="C:/Project-SMU/CrystalGame/Assets/images/crystal_diamond.jpg" 
+          /></button>
+          
+    
+          <div class="col"><button id="diamond_butt" data-name="ruby"><img id="diamond" class="img-responsive"  src ="C:/Project-SMU/CrystalGame/Assets/images/ruby.jpg" 
+          /></button>
+          </div>
+          </div>
+
+<div class="row">
+
+     <div class="col-lg-4"><button id="diamond_butt" data-name="emerald"><img id="diamond" class="img-responsive"  src ="C:/Project-SMU/CrystalGame/Assets/images/emerald.jpg" 
+     /></button>
+    </div>
+    <div class="col-lg-4"><button id="diamond_butt" data-name="Saphire"><img id="diamond" class="img-responsive"  src ="C:/Project-SMU/CrystalGame/Assets/images/Saphire.jpg" 
+    /></button>
+    </div>
+</div>
+
+
+
+</div>
+
+
+<script type='text/javascript'>
+var max=19;
+var min=120;
+var totalscore=0;
+var losses=0;
+var wins=0;
+var randomnumberatstart;
+
+var randomDiamond;
+var randomRuby;
+var randomEmerald;
+var randomSaphire;
+
+function AddUserTotal()
+{	console.log($(this).attr('data-name'));
+if($(this).attr('data-name')==="diamond")
+	totalscore+=randomDiamond;
+else if($(this).attr('data-name')==="ruby")
+	totalscore+=randomRuby;
+else if($(this).attr('data-name')==="emerald")
+	totalscore+=randomEmerald;
+else if($(this).attr('data-name')==="Saphire")
+	totalscore+=randomSaphire;
+$("#score").html(totalscore);
+if(totalscore>randomnumberatstart)
+{	
+	losses+=1;
+	$("#lossesnum").html(losses);
+	reset();
+    initializeNums();
+}
+if(totalscore===randomnumberatstart)
+	{
+		wins+=1;
+        $("#winsnum").html(wins);
+        reset();
+	   initializeNums();
+}
+
+}
+
+$(document).ready(function()
+	{
+   initializeNums();
+  
+
+	});
+
+$(document).on("click","#diamond_butt",AddUserTotal);
+
+function reset()
+{
+	$("#num").empty();
+	$("#score").empty();
+}
+
+function initializeNums()
+{   
+	totalscore=0;
+ randomnumberatstart=Math.floor(Math.random()*(max-min)+min);
+ randomDiamond=getRandom();
+ randomRuby=getRandom();
+ randomEmerald=getRandom();
+ randomSaphire=getRandom();
+ $("#num").html(randomnumberatstart);
+
+}
+
+
+function getRandom()
+{
+	return Math.floor(Math.random()*12);
+}
+
+</script>
+
+
+</Body>
+
+</HTML>
